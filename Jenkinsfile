@@ -22,7 +22,8 @@ pipeline {
                 script {
                     dir('kubernetes') {
                         sh "aws eks update-kubeconfig --name myapp-eks-cluster"
-                        sh "kubectl apply -f chukwuebuka-deployment.yaml"                  
+                        sh "kubectl apply -f chukwuebuka-deployment.yaml"  
+                        sh "kubectl apply -f manifests-monitoring"                
                     }
                 }
             }
